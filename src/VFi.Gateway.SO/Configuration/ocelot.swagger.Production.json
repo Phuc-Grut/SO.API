@@ -1,0 +1,65 @@
+{
+
+  "SwaggerEndPoints": [
+    {
+      "Key": "so",
+      "TakeServersFromDownstreamService": true,
+      "Config": [
+        {
+          "Name": "so",
+          "Version": "v1",
+          "Service": {
+            "Name": "so",
+            "Path": "/swagger/v1/swagger.json"
+          },
+          "Url": "http://localhost:5011/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "pim",
+      "TakeServersFromDownstreamService": true,
+      "Config": [
+        {
+          "Name": "pim",
+          "Version": "v1",
+          "Service": {
+            "Name": "pim",
+            "Path": "/swagger/v1/swagger.json"
+          },
+          "Url": "http://api.scn.local:5007/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "master",
+      "TakeServersFromDownstreamService": true,
+      "Config": [
+        {
+          "Name": "master",
+          "Version": "v1",
+          "Service": {
+            "Name": "master",
+            "Path": "/swagger/v1/swagger.json"
+          },
+          "Url": "http://api.scn.local:5172/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "core",
+      "TakeServersFromDownstreamService": true,
+      "Config": [
+        {
+          "Name": "core",
+          "Version": "v1",
+          "Service": {
+            "Name": "core",
+            "Path": "/swagger/v1/swagger.json"
+          },
+          "Url": "http://api.scn.local:5171/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ]
+}

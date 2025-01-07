@@ -1,0 +1,9 @@
+{
+  "GlobalConfiguration": {
+    "BaseUrl": "https://so-api.scnsmart.com",
+    "RequestIdKey": "SORequestId",
+    "UseServiceDiscovery": true,
+    "AdministrationPath": "/administration"
+  }
+
+}

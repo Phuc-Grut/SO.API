@@ -1,0 +1,19 @@
+#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+FROM harbor.vfico.com/base/dotnet:6.0 AS base
+
+RUN ln -s /lib/x86_64-linux-gnu/libdl-2.24.so /lib/x86_64-linux-gnu/libdl.so
+RUN apt-get update && apt-get install -y --allow-unauthenticated libgdiplus libc6-dev libx11-dev
+RUN ln -s libgdiplus.so gdiplus.dll 
+
+RUN echo "deb http://deb.debian.org/debian/ bookworm main contrib" > /etc/apt/sources.list && \
+    echo "deb-src http://deb.debian.org/debian/ bookworm main contrib" >> /etc/apt/sources.list && \
+    echo "deb http://security.debian.org/ bookworm-security main contrib" >> /etc/apt/sources.list && \
+    echo "deb-src http://security.debian.org/ bookworm-security main contrib" >> /etc/apt/sources.list
+RUN sed -i'.bak' 's/$/ contrib/' /etc/apt/sources.list
+RUN apt-get update; apt-get install -y ttf-mscorefonts-installer fontconfig
+RUN apt-get install -y fonts-ipafont-gothic
+
+# docker build -t harbor.vfico.com/base/dotnet:6.0_jp_font -f .\src\VFi.Api.SO\Dockerfile.jp_font .
+# docker push harbor.vfico.com/base/dotnet:6.0_jp_font
+

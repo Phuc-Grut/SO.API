@@ -1,0 +1,104 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using FluentValidation;
+using Microsoft.EntityFrameworkCore;
+using VFi.Application.SO.Ultilities;
+using VFi.Domain.SO.Interfaces;
+
+namespace VFi.Application.SO.Commands.Validations;
+
+
+public abstract class PaymentTermValidation<T> : AbstractValidator<T> where T : PaymentTermCommand
+{
+    protected readonly IPaymentTermRepository _context;
+    private Guid Id;
+    public PaymentTermValidation(IPaymentTermRepository context)
+    {
+        _context = context;
+    }
+    public PaymentTermValidation(IPaymentTermRepository context, Guid id)
+    {
+        _context = context;
+        Id = id;
+    }
+
+    protected void ValidateId()
+    {
+        RuleFor(c => c.Id)
+            .NotEqual(Guid.Empty);
+    }
+
+    protected void ValidateCode()
+    {
+        RuleFor(c => c.Code)
+            .NotNull()
+            .WithMessage("Code not null")
+            .MaximumLength(50)
+            .WithMessage("Code must not exceed 50 characters");
+    }
+
+    protected void ValidateAddCodeUnique()
+    {
+        RuleFor(x => x.Code).Must(IsAddUnique).WithMessage("Code already exists").WithErrorCode(ErrorCode.TRUNGMA);
+    }
+
+    private bool IsAddUnique(string code)
+    {
+        var model = _context.GetByCode(code).Result;
+
+        if (model is null)
+        {
+            return true;
+        }
+
+        return false;
+    }
+    private bool IsEditUnique(string? code)
+    {
+        var model = _context.GetByCode(code).Result;
+
+        if (model == null || model.Id == Id)
+        {
+            return true;
+        }
+
+        return false;
+    }
+    protected void ValidateEditCodeUnique()
+    {
+        RuleFor(x => x.Code).Must(IsEditUnique).WithMessage("Code already exists").WithErrorCode(ErrorCode.TRUNGMA);
+    }
+
+}
+
+public class AddPaymentTermValidation : PaymentTermValidation<AddPaymentTermCommand>
+{
+    public AddPaymentTermValidation(IPaymentTermRepository context) : base(context)
+    {
+        ValidateId();
+        ValidateCode();
+        ValidateAddCodeUnique();
+    }
+}
+
+public class EditPaymentTermValidation : PaymentTermValidation<EditPaymentTermCommand>
+{
+    public EditPaymentTermValidation(IPaymentTermRepository context, Guid id) : base(context, id)
+    {
+        ValidateId();
+        ValidateCode();
+        ValidateEditCodeUnique();
+    }
+}
+
+public class DetelePaymentTermValidation : PaymentTermValidation<DeletePaymentTermCommand>
+{
+    public DetelePaymentTermValidation(IPaymentTermRepository context) : base(context)
+    {
+        ValidateId();
+    }
+
+}

@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace VFi.Application.SO.DTOs;
+
+public class OrderCostDto
+{
+    public Guid Id { get; set; }
+    public Guid QuotationId { get; set; }
+    public Guid? ExpenseId { get; set; }
+    public int? Type { get; set; }
+    public double? Rate { get; set; }
+    public decimal? Amount { get; set; }
+    public int? Status { get; set; }
+    public int? DisplayOrder { get; set; }
+    public Guid? CreatedBy { get; set; }
+    public DateTime? CreatedDate { get; set; }
+    public Guid? UpdatedBy { get; set; }
+    public DateTime? UpdatedDate { get; set; }
+}
+public class DeleteOrderCostDto
+{
+    public Guid Id { get; set; }
+}

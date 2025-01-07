@@ -1,0 +1,78 @@
+stages:
+  - build
+  - deploy
+
+
+####################################################################
+#### RULES
+####################################################################
+
+.rules_build:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main" && $CI_COMMIT_TITLE =~ /build/'
+      when: on_success
+    - when: manual
+
+.rules_deploy:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main" && $CI_COMMIT_TITLE =~ /deploy/'
+      when: on_success
+    - when: manual
+
+.rules_deploy_prod:
+  rules:
+    - when: manual
+
+####################################################################
+#### Build
+#####################################################################
+build:
+  extends: .rules_build
+  stage: build
+  script:
+    - echo "$PASSWORD_REGISTRY" | docker login "$URL_REGISTRY" -u "$USER_REGISTRY" --password-stdin
+    - docker build -t harbor.vfico.com/vfico/so-api -f src/VFi.Api.SO/Dockerfile .
+    - docker push harbor.vfico.com/vfico/so-api
+  tags:
+    - dotnet
+
+
+#####################################################################
+#### Deploy
+#####################################################################
+deploy:
+  extends: .rules_deploy
+  stage: deploy
+  before_script:
+    - "command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )"
+    - eval $(ssh-agent -s)
+    - echo "$SSH_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+  script:
+    - echo "$SSH_KEY" > id.rsa
+    - chmod 700 id.rsa
+    - ssh -o StrictHostKeyChecking=no -i id.rsa $SSH_USER@$SSH_IP_50 -p $SSH_PORT "kubectl rollout restart deployment/so-api -n vfico-dev"
+  tags:
+    - dotnet
+
+#####################################################################
+#### Deploy
+#####################################################################
+deploy_prod:
+  extends: .rules_deploy_prod
+  stage: deploy
+  before_script:
+    - "command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )"
+    - eval $(ssh-agent -s)
+    - echo "$SSH_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+  script:
+    - echo "$SSH_KEY" > id.rsa
+    - chmod 700 id.rsa
+    - ssh -o StrictHostKeyChecking=no -i id.rsa $SSH_USER@$SSH_IP_50 -p $SSH_PORT "kubectl rollout restart deployment/so-api -n vfico-production"
+  tags:
+    - dotnet
+
+

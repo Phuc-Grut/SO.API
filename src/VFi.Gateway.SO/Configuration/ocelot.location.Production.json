@@ -1,0 +1,404 @@
+{
+  "Routes": [
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "master_prod",
+      "DownstreamPathTemplate": "/api/country/get-listbox",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/country/get-listbox",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "SwaggerKey": "master",
+      "RouteIsCaseSensitive": true,
+      "LoadBalancerOptions": { "Type": "LeastConnection" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OidcSecurity",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "AuthInternalHandler"
+      ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "master_prod",
+      "DownstreamPathTemplate": "/api/country/paging",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/country/paging",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "SwaggerKey": "master",
+      "RouteIsCaseSensitive": true,
+      "LoadBalancerOptions": { "Type": "LeastConnection" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OidcSecurity",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "AuthInternalHandler"
+      ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "master_prod",
+      "DownstreamPathTemplate": "/api/country/add",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/country/add",
+      "UpstreamHttpMethod": [
+        "Post"
+      ],
+      "SwaggerKey": "master",
+      "RouteIsCaseSensitive": true,
+      "LoadBalancerOptions": { "Type": "LeastConnection" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OidcSecurity",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "AuthInternalHandler"
+      ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "master_prod",
+      "DownstreamPathTemplate": "/api/country/edit",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/country/edit",
+      "UpstreamHttpMethod": [
+        "Put"
+      ],
+      "SwaggerKey": "master",
+      "RouteIsCaseSensitive": true,
+      "LoadBalancerOptions": { "Type": "LeastConnection" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OidcSecurity",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "AuthInternalHandler"
+      ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "master_prod",
+      "DownstreamPathTemplate": "/api/country/delete/{id}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/country/delete/{id}",
+      "UpstreamHttpMethod": [
+        "Delete"
+      ],
+      "SwaggerKey": "master",
+      "RouteIsCaseSensitive": true,
+      "LoadBalancerOptions": { "Type": "LeastConnection" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OidcSecurity",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "AuthInternalHandler"
+      ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "master_prod",
+      "DownstreamPathTemplate": "/api/district/get-listbox",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/district/get-listbox",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "SwaggerKey": "master",
+      "RouteIsCaseSensitive": true,
+      "LoadBalancerOptions": { "Type": "LeastConnection" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OidcSecurity",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "AuthInternalHandler"
+      ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "master_prod",
+      "DownstreamPathTemplate": "/api/district/paging",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/district/paging",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "SwaggerKey": "master",
+      "RouteIsCaseSensitive": true,
+      "LoadBalancerOptions": { "Type": "LeastConnection" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OidcSecurity",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "AuthInternalHandler"
+      ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "master_prod",
+      "DownstreamPathTemplate": "/api/district/add",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/district/add",
+      "UpstreamHttpMethod": [
+        "Post"
+      ],
+      "SwaggerKey": "master",
+      "RouteIsCaseSensitive": true,
+      "LoadBalancerOptions": { "Type": "LeastConnection" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OidcSecurity",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "AuthInternalHandler"
+      ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "master_prod",
+      "DownstreamPathTemplate": "/api/district/edit",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/district/edit",
+      "UpstreamHttpMethod": [
+        "Put"
+      ],
+      "SwaggerKey": "master",
+      "RouteIsCaseSensitive": true,
+      "LoadBalancerOptions": { "Type": "LeastConnection" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OidcSecurity",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "AuthInternalHandler"
+      ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "master_prod",
+      "DownstreamPathTemplate": "/api/district/delete/{id}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/district/delete/{id}",
+      "UpstreamHttpMethod": [
+        "Delete"
+      ],
+      "SwaggerKey": "master",
+      "RouteIsCaseSensitive": true,
+      "LoadBalancerOptions": { "Type": "LeastConnection" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OidcSecurity",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "AuthInternalHandler"
+      ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "master_prod",
+      "DownstreamPathTemplate": "/api/stateprovince/get-listbox",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/stateprovince/get-listbox",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "SwaggerKey": "master",
+      "RouteIsCaseSensitive": true,
+      "LoadBalancerOptions": { "Type": "LeastConnection" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OidcSecurity",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "AuthInternalHandler"
+      ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "master_prod",
+      "DownstreamPathTemplate": "/api/stateprovince/paging",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/stateprovince/paging",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "SwaggerKey": "master",
+      "RouteIsCaseSensitive": true,
+      "LoadBalancerOptions": { "Type": "LeastConnection" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OidcSecurity",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "AuthInternalHandler"
+      ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "master_prod",
+      "DownstreamPathTemplate": "/api/stateprovince/add",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/stateprovince/add",
+      "UpstreamHttpMethod": [
+        "Post"
+      ],
+      "SwaggerKey": "master",
+      "RouteIsCaseSensitive": true,
+      "LoadBalancerOptions": { "Type": "LeastConnection" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OidcSecurity",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "AuthInternalHandler"
+      ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "master_prod",
+      "DownstreamPathTemplate": "/api/stateprovince/edit",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/stateprovince/edit",
+      "UpstreamHttpMethod": [
+        "Put"
+      ],
+      "SwaggerKey": "master",
+      "RouteIsCaseSensitive": true,
+      "LoadBalancerOptions": { "Type": "LeastConnection" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OidcSecurity",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "AuthInternalHandler"
+      ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "master_prod",
+      "DownstreamPathTemplate": "/api/stateprovince/delete/{id}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/stateprovince/delete/{id}",
+      "UpstreamHttpMethod": [
+        "Delete"
+      ],
+      "SwaggerKey": "master",
+      "RouteIsCaseSensitive": true,
+      "LoadBalancerOptions": { "Type": "LeastConnection" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OidcSecurity",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "AuthInternalHandler"
+      ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "master_prod",
+      "DownstreamPathTemplate": "/api/ward/get-listbox",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/ward/get-listbox",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "SwaggerKey": "master",
+      "RouteIsCaseSensitive": true,
+      "LoadBalancerOptions": { "Type": "LeastConnection" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OidcSecurity",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "AuthInternalHandler"
+      ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "master_prod",
+      "DownstreamPathTemplate": "/api/ward/paging",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/ward/paging",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "SwaggerKey": "master",
+      "RouteIsCaseSensitive": true,
+      "LoadBalancerOptions": { "Type": "LeastConnection" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OidcSecurity",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "AuthInternalHandler"
+      ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "master_prod",
+      "DownstreamPathTemplate": "/api/ward/add",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/ward/add",
+      "UpstreamHttpMethod": [
+        "Post"
+      ],
+      "SwaggerKey": "master",
+      "RouteIsCaseSensitive": true,
+      "LoadBalancerOptions": { "Type": "LeastConnection" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OidcSecurity",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "AuthInternalHandler"
+      ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "master_prod",
+      "DownstreamPathTemplate": "/api/ward/edit",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/ward/edit",
+      "UpstreamHttpMethod": [
+        "Put"
+      ],
+      "SwaggerKey": "master",
+      "RouteIsCaseSensitive": true,
+      "LoadBalancerOptions": { "Type": "LeastConnection" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OidcSecurity",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "AuthInternalHandler"
+      ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "master_prod",
+      "DownstreamPathTemplate": "/api/ward/delete/{id}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/ward/delete/{id}",
+      "UpstreamHttpMethod": [
+        "Delete"
+      ],
+      "SwaggerKey": "master",
+      "RouteIsCaseSensitive": true,
+      "LoadBalancerOptions": { "Type": "LeastConnection" },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "OidcSecurity",
+        "AllowedScopes": []
+      },
+      "DelegatingHandlers": [
+        "AuthInternalHandler"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+﻿{
+  "CodeGenerationMode": 2,
+  "ContextClassName": "BECOXYContext",
+  "ContextNamespace": null,
+  "DefaultDacpacSchema": null,
+  "FilterSchemas": false,
+  "IncludeConnectionString": false,
+  "ModelNamespace": null,
+  "OutputContextPath": null,
+  "OutputPath": "Models",
+  "PreserveCasingWithRegex": true,
+  "ProjectRootNamespace": "VFi.Domain.SO",
+  "Schemas": null,
+  "SelectedHandlebarsLanguage": 0,
+  "SelectedToBeGenerated": 0,
+  "Tables": [
+    {
+      "Name": "[hr].[COUNTRY]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[DISTRICT]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[STATE_PROVINCE]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[WARD]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[MEALSHIFT]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[CONTRACT]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[PERSONAL_TAX_RULE]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[PERSONALTAXRULEDETAILS]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[OVERTIME_RULE]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[LEAVEFORM]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[LEAVEREQUESTFORM]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[HOLIDAY]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[WARD]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[WAGESCALE]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[WAGEPERIOD]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[WAGECATEGORIE]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[MONEYVOLATILITY]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[EXPENSE]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[LICENSEPLATE]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[ALLOWANCECATEGORIE]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[UNIT]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[MONEYVOLATILITY]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[ORGANIZATION]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[ORGANIZATION]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[DEPARTMENT]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[INSURANCE]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[CONTRACT]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[FINISHCONTRACT]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[SALARYRECORDS]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[DECISIONAPPOINT]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[hr].[APPOINTMENTPROPOSAL]",
+      "ObjectType": 0
+    },
+    {
+      {
+        "Name": "[hr].[ASSET]",
+        "ObjectType": 0
+      }
+    }
+  ],
+  "UiHint": "0157b7401120.ES_SO",
+  "UseBoolPropertiesWithoutDefaultSql": false,
+  "UseDatabaseNames": false,
+  "UseDbContextSplitting": false,
+  "UseFluentApiOnly": true,
+  "UseHandleBars": false,
+  "UseHierarchyId": false,
+  "UseInflector": false,
+  "UseLegacyPluralizer": false,
+  "UseManyToManyEntity": false,
+  "UseNoConstructor": false,
+  "UseNoDefaultConstructor": false,
+  "UseNoNavigations": false,
+  "UseNoObjectFilter": false,
+  "UseNodaTime": false,
+  "UseNullableReferences": false,
+  "UseSchemaFolders": false,
+  "UseSpatial": false,
+  "UseT4": false
+}

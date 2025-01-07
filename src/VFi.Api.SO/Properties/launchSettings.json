@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "VFi.Api.SO": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "so-api",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://*:5011"
+    }
+  }
+}
